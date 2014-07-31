@@ -12,7 +12,7 @@
 
    add_action( 'init', 'create_people_dir' ); // Execute the custom function named create_movie_review during the initialization phase every time a page is generated.
 
-   function create_px_people() {
+   function create_people_dir() {
     register_post_type( 'people_dir',
         array(
             'labels' => array(
