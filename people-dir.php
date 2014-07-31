@@ -42,9 +42,9 @@
     );
 }
 
-	add_action( 'admin_init', 'my_admin' ); // Registers a function to be called when the WordPress admin interface is visited
+	add_action( 'admin_init', 'my_admin2' ); // Registers a function to be called when the WordPress admin interface is visited
 
-	function my_admin() {
+	function my_admin2() {
     add_meta_box( 'people_dir_meta_box', // Registers a meta box and associates it with the people_dir custom post type
         'Person Bio',
         'display_people_dir_meta_box',
