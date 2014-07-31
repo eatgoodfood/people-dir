@@ -45,7 +45,7 @@
 	add_action( 'admin_init', 'my_admin' ); // Registers a function to be called when the WordPress admin interface is visited
 
 	function my_admin() {
-    add_meta_box( 'people_dir_meta_box', // Registers a meta box and associates it with the px_people custom post type
+    add_meta_box( 'people_dir_meta_box', // Registers a meta box and associates it with the people_dir custom post type
         'Person Bio',
         'display_people_dir_meta_box',
         'people_dir', 'side', 'core'
@@ -59,7 +59,7 @@
 	    <table>
 	        <tr>
 	            <td style="width: 100%">Staff Position</td>
-	            <td><input type="text" name="staff_position" value="<?php echo $staff_position; ?>" /></td>
+	            <td><input type="text" name="staff_person_position" value="<?php echo $staff_position; ?>" /></td>
 	        </tr>
 	    </table>
 	    <?php
@@ -70,8 +70,8 @@ function add_people_dir_fields( $people_dir_id, $people_dir ) {
     // Check post type for movie reviews
     if ( $people_dir->post_type == 'people_dir' ) {
         // Store data in post meta table if present in post data
-        if ( isset( $_POST['staff_position'] ) && $_POST['staff_position'] != '' ) {
-            update_post_meta( $people_dir_id, 'media_source', $_POST['staff_position'] );
+        if ( isset( $_POST['staff_person_position'] ) && $_POST['staff_person_position'] != '' ) {
+            update_post_meta( $people_dir_id, 'staff_position', $_POST['staff_person_position'] );
         }
     }
 }
